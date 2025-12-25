@@ -55,7 +55,7 @@ def get_star_multiplier(flavor_score):
     else: return 5, 1.5
 
 # =============================
-# Batch Generate 2M Kombinasi
+# Batch generate 2 Juta Kombinasi
 # =============================
 berry_names = list(berries.keys())
 batch_size = 2_000_000
@@ -104,16 +104,16 @@ for combo in all_combos:
     # Tulis batch
     if len(batch_data) >= batch_size:
         df = pd.DataFrame(batch_data)
-        df.to_parquet(f"berry_master{batch_count}.parquet", index=False)
+        df.to_parquet(f"all_8berry_master_batch{batch_count}.parquet", index=False)
         batch_data = []
         batch_count += 1
         elapsed = time.time() - start_time
-        eta_sec = elapsed / total_count * (76_904_685 - total_count)
+        eta_sec = elapsed / total_count * (78_000_000 - total_count)
         print(f"Batch {batch_count} selesai ({total_count} kombinasi), waktu berlalu: {sec_to_hms(elapsed)}, ETA: {sec_to_hms(eta_sec)}")
 
 # Tulis sisa batch terakhir
 if batch_data:
     df = pd.DataFrame(batch_data)
-    df.to_parquet(f"berry_master{batch_count}.parquet", index=False)
+    df.to_parquet(f"all_8berry_master_batch{batch_count}.parquet", index=False)
 
-print("File master selesai dibuat: berry_master*.parquet")
+print("File master selesai dibuat: all_8berry_master_batch*.parquet")
