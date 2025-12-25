@@ -69,7 +69,43 @@ does not matter.
 
 ---
 
+## How to use the Berry Combination Generator
+
+This generator produces all possible berry combinations
+and saves them as Parquet files on your computer.
+
+### Steps:
+
+1. Download the **generator `.exe`** from the repository releases.
+2. Run the `.exe` file.
+3. Choose a folder where the Parquet files will be saved.
+4. Wait for the process to complete.
+   - High CPU usage is normal.
+   - This process only needs to be done **once**.
+
+5. After generation, use the filter or GUI to explore the dataset.
+   Make sure both the generator output and the filter/GUI
+   point to the **same folder**.
+
+### Notes
+
+- You can select any folder on your computer for the output.
+- Once generated, the Parquet files **do not need to be recreated**.
+- Estimated generation time depends on your computer:
+  - Low-end: ~1.5–3 hours
+  - Mid-range: ~30–90 minutes
+  - High-end: ~15–40 minutes
+
+---
+
 ## Status
 
 This project is currently in an early, exploratory stage.
 Structure, tooling, and documentation may evolve over time.
+
+---
+
+## Credits
+
+- Project concept, development, and documentation: **lunafrost-lab**
+- Special thanks to all testers and contributors for feedback
