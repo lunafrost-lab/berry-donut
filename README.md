@@ -98,6 +98,36 @@ and saves them as Parquet files on your computer.
 
 ---
 
+## 🔐 Security & Privacy
+
+Berry Donut is designed with user privacy and system safety in mind.
+
+### Local Processing Only
+All data generation and filtering processes run **entirely on the user's local machine**.
+No data is sent, uploaded, or shared to any external server.
+
+### No Network Access
+This application does **not** require an internet connection to operate.
+It does not perform:
+- Network requests
+- Telemetry
+- Tracking
+- Background communication
+
+### Generated Data
+All generated files (e.g. Parquet or Excel exports) are created **locally** in the user-defined folder.
+The application does not read or modify files outside its working directory.
+
+### Open Source Transparency
+The source code is publicly available so users can verify:
+- What the application does
+- How data is processed
+- That no hidden or malicious behavior exists
+
+If you are building from source or using the provided executable, you remain in full control of your data.
+
+---
+
 ## Status
 
 This project is currently in an early, exploratory stage.
