@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v2.0] – 29 December 2025
+**✨ New Features**
+- **Pagination**: Query results are now limited to **50 per page** to prevent freezing on large datasets.
+- **Navigation Button**s: Easily move through results with **First, Prev, Next, Last** buttons.
+- `Reset` Button: Clear all filters and results, returning the app to its initial state.
+- **Dynamic Export**: Export results to Excel is now available **after running a query**.
+
+**🖌️ UI / UX Improvements**
+- `Run Query` button always remains **centered below the progress bar**.
+- Navigation buttons appear neatly next to `Run Query` (order: First → Prev → Next → Last).
+- `Reset` / `Export` buttons appear on the **right side**, without shifting other buttons.
+- Progress text now shows the current range of results per page:
+  - Example: `Page 3/5 — 101-150 / 216 results`.
+- Buttons automatically **enable/disable** depending on the page:
+  - First & Prev disabled on first page
+  - Next & Last disabled on last page
+- Layout remains elegant and stable, even after resetting or navigating pages.
+
+**🐞 Bug Fixes**
+- Navigation buttons no longer remain active on the first or last page.
+- Reset button now properly hides navigation and export buttons.
+- Fixed issues where buttons could shift position after page navigation.
+
 ## [v1.8] – 27 December 2025
 **Added**
 - Menu bar with `File → Exit` and `Help → About` options showing app info and version.
