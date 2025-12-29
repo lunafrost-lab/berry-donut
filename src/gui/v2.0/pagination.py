@@ -7,12 +7,12 @@ class PaginationManager:
 
     def update(self, total_rows):
         self.total_rows = total_rows
-        self.total_pages = max(1, (total_rows + self.page_size - 1) // self.page_size)
+        self.total_pages = max(1, (self.total_rows + self.page_size - 1) // self.page_size)
+        self.current_page = 1
 
     def offset_limit(self):
         offset = (self.current_page - 1) * self.page_size
-        limit = self.page_size
-        return offset, limit
+        return offset, self.page_size
 
     def can_prev(self):
         return self.current_page > 1
@@ -20,16 +20,7 @@ class PaginationManager:
     def can_next(self):
         return self.current_page < self.total_pages
 
-    def goto_first(self):
-        self.current_page = 1
-
-    def goto_last(self):
-        self.current_page = self.total_pages
-
-    def prev_page(self):
-        if self.can_prev():
-            self.current_page -= 1
-
-    def next_page(self):
-        if self.can_next():
-            self.current_page += 1
+    def goto_first(self): self.current_page = 1
+    def goto_last(self): self.current_page = self.total_pages
+    def prev_page(self): self.current_page = max(1, self.current_page - 1)
+    def next_page(self): self.current_page = min(self.total_pages, self.current_page + 1)
