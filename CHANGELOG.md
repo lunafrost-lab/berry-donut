@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v2.8-dev] – 30 December 2025
+- **Stabilization** release. See `src/gui/current/CHANGELOG.md` for technical details.
+
 ## [v2.0] – 29 December 2025
 **✨ New Features**
 - **Pagination**: Query results are now limited to **50 per page** to prevent freezing on large datasets.
